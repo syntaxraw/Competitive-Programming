@@ -3,10 +3,14 @@ using namespace std;
 using ll = long long;
 
 void solve(){
-    int n, m, i, j;
-    cin >> n >> m >> i >> j;
+    long long n;
+    cin >> n;
+    while (n%2 == 0){
+        n/=2;
 
-    cout << 1 << " " << m << " " << n << " " << 1 << endl;
+    }
+    if (n>1) cout << "YES" << endl;
+    else cout << "NO" << endl;
 }
 
 int main(){
