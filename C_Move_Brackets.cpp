@@ -3,20 +3,23 @@ using namespace std;
 using ll = long long;
 
 void solve(){
-    long long n;
+    int n;
     cin >> n;
-    vector<long long> a(n);
+    string s;
+    cin >> s;
+    int ans = 0;
+    int bal = 0;
     for (int i = 0; i<n; i++){
-        cin >> a[i];
+        if (s[i] == '(') bal++;
+        else {
+            bal--;
+            if (bal < 0){
+                bal = 0;
+                ans++;
+            }
+        }
     }
-    unordered_set<long long> s;
-    for (int i = 0; i<n; i++){
-        s.insert(a[i]);
-    }
-    if (s.size() < n)
-			cout << "YES" << endl; 
-		else
-			cout << "NO" << endl; 
+    cout << ans << endl;
 }
 
 int main(){
